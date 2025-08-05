@@ -15,8 +15,8 @@ const Navbar:FC=()=>{
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true)
     const pathname = usePathname();
     const navLinks: NavLink[] = [
-    { href: '/docs', text: 'Docs' },
-    { href: '/components', text: 'Components' },
+    { href: '/docs/installation', text: 'Docs' },
+    { href: '/docs/buttons', text: 'Components' },
     { href: '/showcase', text: 'Showcase' },
   ];
   return(
