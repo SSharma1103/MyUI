@@ -32,9 +32,10 @@ const Sidebar: FC = () => {
     {
       title: 'Getting Started',
       links: [
+        { href: '/docs/introduction', text: 'introduction' },
         { href: '/docs/installation', text: 'Installation' },
-        { href: '/docs/editor-setup', text: 'Editor Setup' },
-        { href: '/docs/theming', text: 'Theming' },
+        { href: '/docs/compatibility', text: 'compatibility' },
+        
       ],
     },
     {
