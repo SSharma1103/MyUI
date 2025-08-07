@@ -41,7 +41,7 @@ const Sidebar: FC = () => {
       title: 'Components',
       links: [
         { href: '/docs/buttons', text: 'buttons' },
-        { href: '/docs/responsive-design', text: 'Responsive Design' },
+        { href: '/docs/coursor-effect', text: 'coursor-effect' },
         { href: '/docs/dark-mode', text: 'Dark Mode' },
         { href: '/docs/customization', text: 'Customization' },
       ],
