@@ -17,7 +17,7 @@ const Navbar:FC=()=>{
     const navLinks: NavLink[] = [
     { href: '/docs/installation', text: 'Docs' },
     { href: '/docs/buttons', text: 'Components' },
-    { href: '/showcase', text: 'Showcase' },
+    { href: 'https://github.com/SSharma1103/MyUI', text: 'Github' },
   ];
   return(
     <header className="sticky top-0 z-50 w-full bg-[#0B1120]/80 backdrop-blur-sm border-b border-slate-300/10">
