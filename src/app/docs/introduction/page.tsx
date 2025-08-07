@@ -72,7 +72,7 @@ export default function IntroductionPage() {
 
       <SectionTitle>Built for Integration</SectionTitle>
       <SectionDescription>
-        Each component in MyUI is a self-contained, composable unit. They are built with standard web technologies, making them predictable and easy to combine with other UI elements. You're not locked into a rigid system.
+        Each component in MyUI is a self-contained, composable unit. They are built with standard web technologies, making them predictable and easy to combine with other UI elements. You re not locked into a rigid system.
       </SectionDescription>
       
       <SectionTitle>Styled for Impact</SectionTitle>
