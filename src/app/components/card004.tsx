@@ -38,7 +38,7 @@ export const ProductSaleCard: FC = () => {
             
             {/* Product Details */}
             <div className="p-6">
-                <p className="text-sm text-slate-400 mb-1">Men's Apparel</p>
+                <p className="text-sm text-slate-400 mb-1">Men s Apparel</p>
                 <h3 className="text-xl font-bold text-white mb-3">AeroGlide Runners</h3>
                 
                 <div className="flex items-baseline gap-3 mb-4">

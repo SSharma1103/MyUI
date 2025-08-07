@@ -104,7 +104,7 @@ export default function InstallationPage() {
             3. Next Steps
           </h2>
           <p className="text-slate-300">
-            Once these packages are installed, you're ready to start building your components. Remember that any component using Framer Motion's interactive features must be a Client Component by adding the `'use client';` directive at the top of the file.
+            Once these packages are installed, you re ready to start building your components. Remember that any component using Framer Motion s interactive features must be a Client Component by adding the use client; directive at the top of the file.
           </p>
         </div>
       </div>

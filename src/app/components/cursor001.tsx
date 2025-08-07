@@ -1,7 +1,6 @@
 'use client';
 
-// Import the named export from your showcase template
-import ComponentShowcasePage  from '@/app/components/component-showcase';
+
 import React, { useState, FC } from 'react';
 import { motion } from 'framer-motion';
 

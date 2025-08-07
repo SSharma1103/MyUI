@@ -1,8 +1,7 @@
 'use client'
 
 import React ,{useState,FC} from "react"
-import Link from "next/link"
-import {motion} from 'framer-motion'   
+import Link from "next/link"  
 import { usePathname } from "next/navigation"
 
 interface NavLink {
@@ -12,7 +11,6 @@ interface NavLink {
 
 const Navbar:FC=()=>{
     const [mobileMenuOpen, setMobileMenuOpen]=useState<boolean>(false)
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(true)
     const pathname = usePathname();
     const navLinks: NavLink[] = [
     { href: '/docs/installation', text: 'Docs' },

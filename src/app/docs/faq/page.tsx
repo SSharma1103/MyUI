@@ -87,7 +87,7 @@ export default function FaqPage() {
     <div className="text-white max-w-4xl w-full">
         <h1 className="text-5xl font-extrabold tracking-tighter mb-4">Frequently Asked Questions</h1>
         <p className="text-lg text-slate-400 mb-8">
-            Have a question? Find your answer below. If you can't find what you're looking for, feel free to reach out to our community.
+            Have a question? Find your answer below. If you can t find what you re looking for, feel free to reach out to our community.
         </p>
 
         <div className="w-full">

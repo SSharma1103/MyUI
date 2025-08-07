@@ -1,7 +1,7 @@
 'use client';
 
 // Adjust the import path
-import React, { useRef, useEffect, FC, RefObject } from 'react';
+import React, { RefObject } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion'; // Import motion and hooks
 
 // --- 1. The Crosshair Component ---

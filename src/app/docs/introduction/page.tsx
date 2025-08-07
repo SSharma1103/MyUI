@@ -37,7 +37,7 @@ export default function IntroductionPage() {
 
       <div className="text-lg text-slate-300 leading-relaxed">
         <p className="mb-6">
-          This is not a component library in the traditional sense. It’s a starting point for your own.
+          This is not a component library in the traditional sense. It s a starting point for your own.
         </p>
         <p>
           Think about the limitations of typical UI libraries. You install a package, and you're bound by its styles and APIs. Customizing a component often means fighting against its design, leading to complex overrides and workarounds. MyUI solves this by giving you the code directly.
