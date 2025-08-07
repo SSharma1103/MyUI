@@ -32,7 +32,7 @@ export default function IntroductionPage() {
     <div className="text-white max-w-4xl">
       <h1 className="text-5xl font-extrabold tracking-tighter mb-4">Rethinking UI Development</h1>
       <SectionDescription>
-        MyUI provides a curated collection of beautifully animated components, built with Framer Motion and styled with Tailwind CSS. It's designed for you to own and adapt.
+        MyUI provides a curated collection of beautifully animated components, built with Framer Motion and styled with Tailwind CSS. It s designed for you to own and adapt.
       </SectionDescription>
 
       <div className="text-lg text-slate-300 leading-relaxed">
@@ -40,7 +40,7 @@ export default function IntroductionPage() {
           This is not a component library in the traditional sense. It s a starting point for your own.
         </p>
         <p>
-          Think about the limitations of typical UI libraries. You install a package, and you're bound by its styles and APIs. Customizing a component often means fighting against its design, leading to complex overrides and workarounds. MyUI solves this by giving you the code directly.
+          Think about the limitations of typical UI libraries. You install a package, and you re bound by its styles and APIs. Customizing a component often means fighting against its design, leading to complex overrides and workarounds. MyUI solves this by giving you the code directly.
         </p>
       </div>
 
