@@ -40,10 +40,11 @@ const Sidebar: FC = () => {
     {
       title: 'Components',
       links: [
-        { href: '/docs/buttons', text: 'buttons' },
-        { href: '/docs/coursor-effect', text: 'coursor-effect' },
-        { href: '/docs/dark-mode', text: 'Dark Mode' },
-        { href: '/docs/customization', text: 'Customization' },
+        { href: '/docs/buttons', text: 'Buttons' },
+        { href: '/docs/loaders', text: 'Loaders' },
+        { href: '/docs/coursor-effect', text: 'Coursor-effect' },
+        { href: '/docs/cards', text: 'Cards' },
+        { href: '/docs/effects', text: 'Effects' },
       ],
     },
     {
