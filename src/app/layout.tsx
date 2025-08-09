@@ -32,14 +32,11 @@ export default function RootLayout({
       >
         <Navbar />
         <Sidebar />
-        {/* Wrap children in a main tag and add padding */}
+
         <main className="md:pl-64">
-          <div className="p-4 sm:p-6 lg:p-8">
-            {children}
-          </div>
-          <Footer/>
+          <div className="p-4 sm:p-6 lg:p-8">{children}</div>
+          <Footer />
         </main>
-        
       </body>
     </html>
   );

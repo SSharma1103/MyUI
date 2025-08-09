@@ -1,10 +1,8 @@
-'use client';
+"use client";
 
+import React, { useState, FC } from "react";
+import { motion } from "framer-motion";
 
-import React, { useState, FC } from 'react';
-import { motion } from 'framer-motion';
-
-// --- 1. Define the component to be previewed ---
 const CustomCursor: FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -22,7 +20,7 @@ const CustomCursor: FC = () => {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}
-      style={{ cursor: isHovering ? 'none' : 'auto' }}
+      style={{ cursor: isHovering ? "none" : "auto" }}
     >
       <p className="text-slate-400 pointer-events-none">
         Hover anywhere inside this box to see the effect.
@@ -48,10 +46,10 @@ const CustomCursor: FC = () => {
                 y: mousePosition.y - size / 2,
               }}
               transition={{
-                type: 'spring',
+                type: "spring",
                 stiffness: 120,
                 damping: 30,
-                mass:0.5,
+                mass: 0.5,
                 delay: index * 0.001,
               }}
             />
@@ -61,7 +59,6 @@ const CustomCursor: FC = () => {
   );
 };
 
-// --- 2. Code string for copy ---
 export const cursorCodeString = `
 'use client';
 

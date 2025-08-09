@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const SquareLoader: React.FC = () => {
-    const squareSize = 64;
-    const lineThickness = 4;
-    const animationDuration = 2;
+  const squareSize = 64;
+  const lineThickness = 4;
+  const animationDuration = 2;
 
-    const path = `
+  const path = `
         M ${lineThickness / 2},${lineThickness / 2}
         L ${squareSize - lineThickness / 2},${lineThickness / 2}
         L ${squareSize - lineThickness / 2},${squareSize - lineThickness / 2}
@@ -16,44 +16,36 @@ const SquareLoader: React.FC = () => {
         Z
     `;
 
-    return (
-        <div
-            className="relative"
-            style={{ width: squareSize, height: squareSize }}
-        >
-            {/* Square Outline */}
-            <div className="absolute w-full h-full border-2 border-slate-700 " />
+  return (
+    <div className="relative" style={{ width: squareSize, height: squareSize }}>
+      <div className="absolute w-full h-full border-2 border-slate-700 " />
 
-            {/* Animated Line via SVG Path */}
-            <motion.svg
-                width={squareSize}
-                height={squareSize}
-                viewBox={`0 0 ${squareSize} ${squareSize}`}
-                className="absolute"
-            >
-                <motion.path
-                    d={path}
-                    fill="none"
-                    stroke="#3b82f6"
-                    strokeWidth={lineThickness}
-                    strokeLinecap="round"
-                    pathLength={1}
-                    strokeDasharray="0.2 0.8" // 20% visible, 80% gap
-                    animate={{ strokeDashoffset: [1, 0] }}
-                    transition={{
-                        duration: animationDuration,
-                        ease: 'linear',
-                        repeat: Infinity,
-                    }}
-                />
-            </motion.svg>
-        </div>
-    );
+      <motion.svg
+        width={squareSize}
+        height={squareSize}
+        viewBox={`0 0 ${squareSize} ${squareSize}`}
+        className="absolute"
+      >
+        <motion.path
+          d={path}
+          fill="none"
+          stroke="#3b82f6"
+          strokeWidth={lineThickness}
+          strokeLinecap="round"
+          pathLength={1}
+          strokeDasharray="0.2 0.8"
+          animate={{ strokeDashoffset: [1, 0] }}
+          transition={{
+            duration: animationDuration,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        />
+      </motion.svg>
+    </div>
+  );
 };
 
-
-
-// --- 2. Define the code string for the component ---
 export const loaderCodeString3 = `
 'use client';
 

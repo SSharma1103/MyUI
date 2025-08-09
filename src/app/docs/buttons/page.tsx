@@ -1,18 +1,15 @@
-'use client';
+"use client";
 
-// Import the named export from your showcase template
-import ComponentShowcasePage from '@/app/components/component-showcase'; // Adjust the import path as needed
-import React from 'react';
-import Link from 'next/link'; // Import the Link component for navigation
-import ButtonPreview from '@/app/components/button001';
-import {buttonCodeString} from '@/app/components/button001'
-import { buttonCodeString2} from '@/app/components/button002';
-import AnimatedButton from '@/app/components/button002';
-import AnimatedButton3 from '@/app/components/button003';
-import { buttonCodeString3 } from '@/app/components/button003';
-import { ArrowRightIcon } from '@/app/components/icons';
-
-// A simple arrow icon for the navigation button
+import ComponentShowcasePage from "@/app/components/component-showcase";
+import React from "react";
+import Link from "next/link";
+import ButtonPreview from "@/app/components/button001";
+import { buttonCodeString } from "@/app/components/button001";
+import { buttonCodeString2 } from "@/app/components/button002";
+import AnimatedButton from "@/app/components/button002";
+import AnimatedButton3 from "@/app/components/button003";
+import { buttonCodeString3 } from "@/app/components/button003";
+import { ArrowRightIcon } from "@/app/components/icons";
 
 export default function ButtonComponentPage() {
   return (
@@ -20,37 +17,30 @@ export default function ButtonComponentPage() {
       <ComponentShowcasePage
         title="Animated Button"
         description="A button with a swipe animation on hover, providing a modern and interactive feel."
-        tags={['Core', 'Interactive', 'Animation']}
+        tags={["Core", "Interactive", "Animation"]}
         preview={<ButtonPreview />}
         codeString={buttonCodeString}
       />
-      <div className='h-5'></div>
+      <div className="h-5"></div>
       <ComponentShowcasePage
         title="Animated Booking Button"
         description="A button with a fade transition on hover, revealing an emoji."
-        tags={['Core', 'Interactive', 'Animation']}
-        preview={
-          // Display only the single emoji button variant
-          <AnimatedButton />
-        }
+        tags={["Core", "Interactive", "Animation"]}
+        preview={<AnimatedButton />}
         codeString={buttonCodeString2}
       />
-      <div className='h-5'></div>
+      <div className="h-5"></div>
       <ComponentShowcasePage
         title="Delete Button"
         description="A confirmation button with a swipe-to-reveal icon, ideal for destructive actions."
-        tags={['Destructive', 'Interactive', 'Animation']}
-        preview={
-          // Display only the delete button
-          <AnimatedButton3 />
-        }
+        tags={["Destructive", "Interactive", "Animation"]}
+        preview={<AnimatedButton3 />}
         codeString={buttonCodeString3}
       />
 
-      {/* Navigation to the next page using the simpler button */}
       <div className="flex justify-end mt-12">
-        <Link 
-          href="/docs/loaders" 
+        <Link
+          href="/docs/loaders"
           className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
         >
           Next: Loaders

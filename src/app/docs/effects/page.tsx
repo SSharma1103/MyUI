@@ -1,8 +1,8 @@
 "use client"
 
 import ComponentShowcasePage from "@/app/components/component-showcase";
-import { RevealEffectCard } from "@/app/components/reval001";
-import { revealCardCodeString } from "@/app/components/reval001";
+import { RevealEffectCard } from "@/app/components/reveal001";
+import { revealCardCodeString } from "@/app/components/reveal001";
 import { TextRevealEffect } from "@/app/components/text001";
 import { textRevealCodeString } from "@/app/components/text001";
 import { SpotlightCard } from "@/app/components/SpotlightCard";

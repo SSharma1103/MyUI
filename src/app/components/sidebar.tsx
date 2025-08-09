@@ -1,59 +1,52 @@
-'use client';
+"use client";
 
-// Import React hooks and types
-import React, { FC } from 'react';
-// THE FIX: Import the usePathname hook
-import { usePathname } from 'next/navigation';
+import React, { FC } from "react";
 
-// Define the structure for a single navigation link
+import { usePathname } from "next/navigation";
+
 interface SidebarLink {
   href: string;
   text: string;
 }
 
-// Define the structure for a category of links
 interface LinkCategory {
   title: string;
   links: SidebarLink[];
 }
 
-// The main Sidebar component
 const Sidebar: FC = () => {
-  // THE FIX: Get the current path directly from the hook.
-  // This will automatically update whenever the URL changes.
   const pathname = usePathname();
 
-  // An array of link categories.
   const linkCategories: LinkCategory[] = [
     {
-      title: 'Getting Started',
+      title: "Getting Started",
       links: [
-        { href: '/docs/introduction', text: 'Introduction' },
-        { href: '/docs/installation', text: 'Installation' },
-        { href: '/docs/compatibility', text: 'Compatibility' },
+        { href: "/docs/introduction", text: "Introduction" },
+        { href: "/docs/installation", text: "Installation" },
+        { href: "/docs/compatibility", text: "Compatibility" },
       ],
     },
     {
-      title: 'Components',
+      title: "Components",
       links: [
-        { href: '/docs/buttons', text: 'Buttons' },
-        { href: '/docs/loaders', text: 'Loaders' },
-        { href: '/docs/coursor-effect', text: 'Coursor-effect' },
-        { href: '/docs/cards', text: 'Cards' },
-        { href: '/docs/effects', text: 'Effects' },
+        { href: "/docs/buttons", text: "Buttons" },
+        { href: "/docs/loaders", text: "Loaders" },
+        { href: "/docs/coursor-effect", text: "Coursor-effect" },
+        { href: "/docs/cards", text: "Cards" },
+        { href: "/docs/effects", text: "Effects" },
       ],
     },
     {
-      title: 'Community',
+      title: "Community",
       links: [
-        { href: 'https://github.com/SSharma1103/MyUI', text: 'GitHub' },
-        { href: '/docs/faq', text: 'FAQ' },
+        { href: "https://github.com/SSharma1103/MyUI", text: "GitHub" },
+        { href: "/docs/faq", text: "FAQ" },
       ],
     },
   ];
 
   return (
-    <aside className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col z-40">
+    <aside className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col z-40 pt-3">
       <div className="flex min-h-0 flex-1 flex-col border-r border-slate-800 bg-[#0B1120]">
         <div className="flex flex-1 flex-col overflow-y-auto pt-16">
           <nav className="flex-1 space-y-6 px-4 pb-4">
@@ -69,14 +62,18 @@ const Sidebar: FC = () => {
                       href={link.href}
                       className={`group relative flex items-center rounded-md px-2 py-2 text-sm font-medium transition-colors ${
                         pathname === link.href
-                          ? 'text-white'
-                          : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                          ? "text-white"
+                          : "text-slate-400 hover:text-white hover:bg-slate-800/50"
                       }`}
                     >
-                      <span className={`absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-r-full bg-sky-400 transition-transform duration-200 ease-in-out ${
-                        pathname === link.href ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100'
-                      }`}></span>
-                      
+                      <span
+                        className={`absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-r-full bg-sky-400 transition-transform duration-200 ease-in-out ${
+                          pathname === link.href
+                            ? "scale-y-100"
+                            : "scale-y-0 group-hover:scale-y-100"
+                        }`}
+                      ></span>
+
                       <span className="ml-3">{link.text}</span>
                     </a>
                   ))}
