@@ -9,7 +9,7 @@ import { ProfileCard } from "@/app/components/card003";
 import { ProductSaleCard } from "@/app/components/card004";
 import {productCardCodeString} from "@/app/components/card004";
 import Link from 'next/link';
-import { ArrowRightIcon } from "../buttons/page";
+import { ArrowRightIcon } from '@/app/components/icons';
 
 export default function CardComponentPage() {
   return (

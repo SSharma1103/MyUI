@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRightIcon } from "../buttons/page";
+import { ArrowRightIcon } from '@/app/components/icons';
 
 
 const InfoSection = ({ title, children }: { title: string, children: React.ReactNode }) => (

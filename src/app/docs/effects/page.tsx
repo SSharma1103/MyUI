@@ -8,7 +8,7 @@ import { textRevealCodeString } from "@/app/components/text001";
 import { SpotlightCard } from "@/app/components/SpotlightCard";
 import { spotlightCardCodeString } from "@/app/components/SpotlightCard";
 import Link from "next/link";
-import { ArrowRightIcon } from "../buttons/page";
+import { ArrowRightIcon } from '@/app/components/icons';
 
 
 

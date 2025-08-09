@@ -2,7 +2,7 @@
 // We need to make the CodeBlock a client component to use state and handle clicks.
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRightIcon } from '../buttons/page';
+import { ArrowRightIcon } from '@/app/components/icons';
 // A simple copy icon using an inline SVG to avoid extra dependencies.
 const CopyIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

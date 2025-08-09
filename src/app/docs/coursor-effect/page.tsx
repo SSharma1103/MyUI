@@ -8,7 +8,7 @@ import { cursorCodeString } from '@/app/components/cursor001';
 import CrosshairPreview from '@/app/components/cursor002';
 import { crosshairCodeString } from '@/app/components/cursor002';
 import Link from "next/link";
-import { ArrowRightIcon } from "../buttons/page";
+import { ArrowRightIcon } from '@/app/components/icons';
 
 
 // --- 3. Final page component ---

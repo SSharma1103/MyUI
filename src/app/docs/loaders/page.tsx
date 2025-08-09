@@ -8,7 +8,7 @@ import { loaderCodeString2 } from "@/app/components/loader002";
 import SquareLoader from "@/app/components/loader003";
 import { loaderCodeString3 } from "@/app/components/loader003";
 import Link from "next/link";
-import { ArrowRightIcon } from "../buttons/page";
+import { ArrowRightIcon } from '@/app/components/icons';
 
 export default function GridLoaderPage() {
   return (
