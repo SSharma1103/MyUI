@@ -30,6 +30,7 @@ export default function RevealEffectPage() {
       preview={<SpotlightCard />}
       codeString={spotlightCardCodeString}
     />
+    <div className="h-5"></div>
     <ComponentShowcasePage
       title="Slide to Reveal Effect"
       description="A card with a starry background where a panel slides in on hover to reveal hidden content."

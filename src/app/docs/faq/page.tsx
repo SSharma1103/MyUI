@@ -109,6 +109,7 @@ export default function FaqPage() {
           </FaqItem>
         ))}
       </div>
+      <div className="h-70"></div>
     </div>
   );
 }
