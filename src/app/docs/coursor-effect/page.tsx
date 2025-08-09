@@ -7,6 +7,8 @@ import CustomCursor from '@/app/components/cursor001';
 import { cursorCodeString } from '@/app/components/cursor001';
 import CrosshairPreview from '@/app/components/cursor002';
 import { crosshairCodeString } from '@/app/components/cursor002';
+import Link from "next/link";
+import { ArrowRightIcon } from "../buttons/page";
 
 
 // --- 3. Final page component ---
@@ -28,7 +30,17 @@ export default function CustomCursorPage() {
       preview={<CustomCursor />}
       codeString={cursorCodeString}
     />
+    <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/cards" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: Cards
+          <ArrowRightIcon />
+        </Link>
+      </div>
     </div>
+    
   );
 }
 

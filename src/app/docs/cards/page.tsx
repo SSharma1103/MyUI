@@ -8,6 +8,8 @@ import { CardCodeString2 } from "@/app/components/card002";
 import { ProfileCard } from "@/app/components/card003";
 import { ProductSaleCard } from "@/app/components/card004";
 import {productCardCodeString} from "@/app/components/card004";
+import Link from 'next/link';
+import { ArrowRightIcon } from "../buttons/page";
 
 export default function CardComponentPage() {
   return (
@@ -55,6 +57,15 @@ export default function CardComponentPage() {
       preview={<ProductSaleCard />}
       codeString={productCardCodeString}
     />
+    <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/effects" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: Effects
+          <ArrowRightIcon />
+        </Link>
+      </div>
     </div>
   );
 }

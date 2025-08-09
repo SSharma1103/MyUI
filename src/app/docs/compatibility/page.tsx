@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { ArrowRightIcon } from "../buttons/page";
+
+
 const InfoSection = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div>
     <h2 className="text-2xl font-semibold border-b border-slate-700 pb-2 mb-4">
@@ -71,6 +75,15 @@ export default function CompatibilityPage() {
             <CompatibilityItem name="Tailwind CSS (v3.4+)" status="Supported" />
           </ul>
         </InfoSection>
+      </div>
+      <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/buttons" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: buttons
+          <ArrowRightIcon />
+        </Link>
       </div>
     </div>
   );

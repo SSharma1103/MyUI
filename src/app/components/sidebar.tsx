@@ -1,26 +1,29 @@
 'use client';
 
-import React, { useState, FC, useEffect } from 'react';
+// Import React hooks and types
+import React, { FC } from 'react';
+// THE FIX: Import the usePathname hook
+import { usePathname } from 'next/navigation';
 
+// Define the structure for a single navigation link
 interface SidebarLink {
   href: string;
   text: string;
 }
 
+// Define the structure for a category of links
 interface LinkCategory {
   title: string;
   links: SidebarLink[];
 }
 
+// The main Sidebar component
 const Sidebar: FC = () => {
-  const [pathname, setPathname] = useState<string>('');
+  // THE FIX: Get the current path directly from the hook.
+  // This will automatically update whenever the URL changes.
+  const pathname = usePathname();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setPathname(window.location.pathname);
-    }
-  }, []);
-
+  // An array of link categories.
   const linkCategories: LinkCategory[] = [
     {
       title: 'Getting Started',
@@ -43,6 +46,7 @@ const Sidebar: FC = () => {
     {
       title: 'Community',
       links: [
+        { href: '/showcase', text: 'Showcase' },
         { href: 'https://github.com/SSharma1103/MyUI', text: 'GitHub' },
         { href: '/docs/faq', text: 'FAQ' },
       ],
@@ -70,14 +74,10 @@ const Sidebar: FC = () => {
                           : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       }`}
                     >
-                      {/* Hover/Active bar indicator */}
-                      <span
-                        className={`absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 origin-center rounded-r-full bg-sky-400 transform transition-transform duration-200 ease-in-out ${
-                          pathname === link.href
-                            ? 'scale-y-100'
-                            : 'scale-y-0 group-hover:scale-y-100'
-                        }`}
-                      />
+                      <span className={`absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-r-full bg-sky-400 transition-transform duration-200 ease-in-out ${
+                        pathname === link.href ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100'
+                      }`}></span>
+                      
                       <span className="ml-3">{link.text}</span>
                     </a>
                   ))}

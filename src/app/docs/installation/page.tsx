@@ -1,7 +1,8 @@
 'use client';
 // We need to make the CodeBlock a client component to use state and handle clicks.
 import React, { useState } from 'react';
-
+import Link from 'next/link';
+import { ArrowRightIcon } from '../buttons/page';
 // A simple copy icon using an inline SVG to avoid extra dependencies.
 const CopyIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -107,6 +108,15 @@ export default function InstallationPage() {
             Once these packages are installed, you re ready to start building your components. Remember that any component using Framer Motion s interactive features must be a Client Component by adding the use client; directive at the top of the file.
           </p>
         </div>
+      </div>
+      <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/compatibility" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: Compatibility
+          <ArrowRightIcon />
+        </Link>
       </div>
     </div>
   );

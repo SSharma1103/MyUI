@@ -7,6 +7,8 @@ import { TextRevealEffect } from "@/app/components/text001";
 import { textRevealCodeString } from "@/app/components/text001";
 import { SpotlightCard } from "@/app/components/SpotlightCard";
 import { spotlightCardCodeString } from "@/app/components/SpotlightCard";
+import Link from "next/link";
+import { ArrowRightIcon } from "../buttons/page";
 
 
 
@@ -35,7 +37,16 @@ export default function RevealEffectPage() {
       preview={<RevealEffectCard />}
       codeString={revealCardCodeString}
     />
-    <div className="h-5"></div>
+    <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/faq" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: Faq
+          <ArrowRightIcon />
+        </Link>
+      </div>
     </div>
+    
   );
 }

@@ -7,6 +7,8 @@ import CubeLoader from "@/app/components/loader002";
 import { loaderCodeString2 } from "@/app/components/loader002";
 import SquareLoader from "@/app/components/loader003";
 import { loaderCodeString3 } from "@/app/components/loader003";
+import Link from "next/link";
+import { ArrowRightIcon } from "../buttons/page";
 
 export default function GridLoaderPage() {
   return (
@@ -35,7 +37,17 @@ export default function GridLoaderPage() {
       preview={<SquareLoader />}
       codeString={loaderCodeString3}
     />
-  
+    <div className="flex justify-end mt-12">
+        <Link 
+          href="/docs/coursor-effect" 
+          className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
+        >
+          Next: Coursor-effect
+          <ArrowRightIcon />
+        </Link>
+      </div>
     </div>
+  
+    
   );
 }
