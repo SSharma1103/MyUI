@@ -41,6 +41,7 @@ const Sidebar: FC = () => {
       links: [
         { href: "https://github.com/SSharma1103/MyUI", text: "GitHub" },
         { href: "/docs/faq", text: "FAQ" },
+        { href: "/docs/reviews", text: "Review" },
       ],
     },
   ];
