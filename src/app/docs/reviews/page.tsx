@@ -60,7 +60,7 @@ export default function ReviewsPage() {
                 if (!response.ok) throw new Error('Failed to fetch reviews');
                 const data: Review[] = await response.json();
                 setReviews(data);
-            } catch (err) {
+            } catch { 
                 setError('Could not load reviews.');
             }
         };
@@ -106,8 +106,12 @@ export default function ReviewsPage() {
             setRating(0);
             setEmail('');
             setComment('');
-        } catch (err: any) {
-            setError(err.message);
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unknown error occurred.');
+            }
         }
     };
 
@@ -118,7 +122,7 @@ export default function ReviewsPage() {
                 We&apos;d love to hear what you think about MyUI. Share your experience with the community!
             </p>
 
-            <form onSubmit={handleSubmit} className="p-6 bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg space-y-6">
+            <form onSubmit={handleSubmit} className="p-6 bg-slate-900/ ৫০ border border-slate-800 rounded-xl shadow-lg space-y-6">
                 <div>
                     <label className="block text-sm font-semibold text-slate-300 mb-2">Your Rating</label>
                     <StarRating rating={rating} setRating={setRating} />
