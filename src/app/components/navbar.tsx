@@ -16,8 +16,8 @@ const Navbar: FC = () => {
   const navLinks: NavLink[] = [
     { href: "/docs/installation", text: "Docs" },
     { href: "/docs/buttons", text: "Components" },
-    { href: "https://github.com/SSharma1103/MyUI", text: "Github" },
-  ];
+    { href: "/docs/reviews", text: "Reviews" },
+ ];
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
