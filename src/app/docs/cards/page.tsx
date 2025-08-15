@@ -8,6 +8,8 @@ import { CardCodeString2 } from "@/app/components/card002";
 import { ProfileCard } from "@/app/components/card003";
 import { ProductSaleCard } from "@/app/components/card004";
 import { productCardCodeString } from "@/app/components/card004";
+import { SkillsSection } from "@/app/components/card005";
+import { skillsCodeString } from "@/app/components/card005";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -57,6 +59,14 @@ export default function CardComponentPage() {
         preview={<ProductSaleCard />}
         codeString={productCardCodeString}
       />
+      <div className="h-5"></div>
+      <ComponentShowcasePage
+      title="Skills Section"
+      description="A section to display skills or technologies, categorized into interactive spotlight cards."
+      tags={['Section', 'Layout', 'Interactive']}
+      preview={<SkillsSection />}
+      codeString={skillsCodeString}
+    />
       <div className="flex justify-end mt-12">
         <Link
           href="/docs/effects"
