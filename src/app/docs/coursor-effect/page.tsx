@@ -8,10 +8,21 @@ import CrosshairPreview from "@/app/components/cursor002";
 import { crosshairCodeString } from "@/app/components/cursor002";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
+import { InteractiveBarDisplay } from "@/app/components/cursor003";
+import { barDisplayCodeString } from "@/app/components/cursor003";
 
 export default function CustomCursorPage() {
   return (
     <div>
+      <ComponentShowcasePage
+      title="Interactive Bar Display"
+      description="A futuristic data visualization component where bars animate and react to the vertical position of the cursor."
+      tags={['Effect', 'Animation', 'Data Viz', 'Interactive']}
+      preview={<InteractiveBarDisplay />}
+      codeString={barDisplayCodeString}
+    />
+      
+      <div className="h-5"></div>
       <ComponentShowcasePage
         title="Wobbly Crosshair Cursor"
         description="A custom crosshair cursor with a smooth, wobbly follow effect and a turbulence distortion on link hover."
@@ -19,6 +30,7 @@ export default function CustomCursorPage() {
         preview={<CrosshairPreview />}
         codeString={crosshairCodeString}
       />
+      
       <div className="h-5"></div>
       <ComponentShowcasePage
         title="Scoped Custom Cursor"
@@ -27,6 +39,7 @@ export default function CustomCursorPage() {
         preview={<CustomCursor />}
         codeString={cursorCodeString}
       />
+      
       <div className="flex justify-end mt-12">
         <Link
           href="/docs/cards"

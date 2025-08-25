@@ -10,6 +10,7 @@ import { loaderCodeString3 } from "@/app/components/loader003";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
+
 export default function GridLoaderPage() {
   return (
     <div>
@@ -37,6 +38,8 @@ export default function GridLoaderPage() {
         preview={<SquareLoader />}
         codeString={loaderCodeString3}
       />
+      <div className="h-5"></div>
+     
       <div className="flex justify-end mt-12">
         <Link
           href="/docs/coursor-effect"
