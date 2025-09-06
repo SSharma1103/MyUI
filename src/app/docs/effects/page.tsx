@@ -9,6 +9,8 @@ import { SpotlightCard } from "@/app/components/SpotlightCard";
 import { spotlightCardCodeString } from "@/app/components/SpotlightCard";
 import { SplashScreenPreview } from "@/app/components/SplashScreen";
 import { splashScreenCodeString } from "@/app/components/SplashScreen";
+import { glassmorphismCodeString } from "@/app/components/GlassmorphismCard";
+import { GlassmorphismCardPreview } from "@/app/components/GlassmorphismCard";
 import Link from "next/link";
 import { ArrowRightIcon } from '@/app/components/icons';
 
@@ -48,6 +50,14 @@ export default function RevealEffectPage() {
       tags={['Effect', 'Animation', 'Hover', 'Interactive']}
       preview={<SpotlightCard />}
       codeString={spotlightCardCodeString}
+    />
+    <div className="h-5"></div>
+    <ComponentShowcasePage
+      title="Glassmorphism Card"
+      description="An interactive, draggable card with a modern glass-like effect. Ideal for hero sections or featured content."
+      tags={['Card', 'Interactive', 'Glassmorphism', 'Animation']}
+      preview={<GlassmorphismCardPreview />}
+      codeString={glassmorphismCodeString}
     />
     <div className="flex justify-end mt-12">
         <Link 
