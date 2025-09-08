@@ -10,10 +10,30 @@ import { ProductSaleCard } from "@/app/components/card004";
 import { productCardCodeString } from "@/app/components/card004";
 import { SkillsSection } from "@/app/components/card005";
 import { skillsCodeString } from "@/app/components/card005";
+import { HeatmapGrid } from "@/app/components/heatmap";
+import { heatmapCodeString } from "@/app/components/heatmap";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
+type HeatmapData = {
+    [date: string]: number;
+};
+
+const generateDummyData = (): HeatmapData => {
+    const data: HeatmapData = {};
+    const today = new Date();
+    for (let i = 0; i < 365; i++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - i);
+        const dateString = date.toISOString().split('T')[0];
+        // Generate a random contribution level (0-8)
+        data[dateString] = Math.floor(Math.random() * 9);
+    }
+    return data;
+};
+
 export default function CardComponentPage() {
+  const dummyData = generateDummyData();
   return (
     <div>
       <ComponentShowcasePage
@@ -39,6 +59,14 @@ export default function CardComponentPage() {
         }
         codeString={CardCodeString2}
       />
+      <div className="h-5"></div>
+      <ComponentShowcasePage
+      title="Contribution Heatmap card"
+      description="A component to visualize data over the past year, similar to a GitHub contribution graph."
+      tags={['Data Viz', 'Chart', 'Calendar']}
+      preview={<HeatmapGrid data={dummyData} />}
+      codeString={heatmapCodeString}
+    />
       <div className="h-5"></div>
       <ComponentShowcasePage
         title="Profile Card"
