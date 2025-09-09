@@ -17,6 +17,7 @@ const Navbar: FC = () => {
     { href: "/docs/installation", text: "Docs" },
     { href: "/docs/buttons", text: "Components" },
     { href: "/docs/reviews", text: "Reviews" },
+    { href: "/docs/mytools", text: "MyTools" },
  ];
 
   const menuVariants = {
