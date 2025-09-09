@@ -28,7 +28,7 @@ export default function MyToolsPage() {
         
         {/* Interactive Card for the Heatmap Tool */}
         <motion.a 
-            href="https://heatmap-kglq.vercel.app/" 
+            href="https://heatmap-zeta.vercel.app/" 
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
