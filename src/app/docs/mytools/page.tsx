@@ -14,12 +14,12 @@ const ArrowUpRightIcon = () => (
 // This is the main component for your new page
 export default function MyToolsPage() {
   return (
-    <div className="w-full mb-77">
+    <div className="w-full">
       {/* Page Header */}
       <div className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight text-white mb-2">My Tools</h1>
         <p className="text-lg text-slate-400">
-          A collection of useful tools and side-projects I've built.
+          A collection of useful tools and side-projects I&apos;ve built.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useRef, useMemo } from "react";
+import React, { FC, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import CrosshairPreview from "@/app/components/cursor002";
 
