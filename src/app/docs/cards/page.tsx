@@ -12,6 +12,8 @@ import { SkillsSection } from "@/app/components/card005";
 import { skillsCodeString } from "@/app/components/card005";
 import { HeatmapGrid } from "@/app/components/heatmap";
 import { heatmapCodeString } from "@/app/components/heatmap";
+import { CodeSnippet } from "@/app/components/card006";
+import { codeSnippetCodeString } from "@/app/components/card006";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -95,6 +97,15 @@ export default function CardComponentPage() {
       preview={<SkillsSection />}
       codeString={skillsCodeString}
     />
+    <div className="h-5"></div>
+    <ComponentShowcasePage
+      title="Code Snippet"
+      description="A read-only component for displaying formatted and highlighted code blocks, styled like a macOS window."
+      tags={['Display', 'Utility', 'Code']}
+      preview={<CodeSnippet />}
+      codeString={codeSnippetCodeString}
+    />
+
       <div className="flex justify-end mt-12">
         <Link
           href="/docs/effects"
