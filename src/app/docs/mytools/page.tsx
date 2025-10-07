@@ -58,8 +58,37 @@ export default function MyToolsPage() {
             </div>
         </motion.a>
 
-        {/* You can add more tool cards here in the future */}
-
+        {/* Interactive Card for the Code Snippet Tool */}
+        <motion.a 
+            href="https://code-snippet-gamma.vercel.app/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
+            whileHover="hover"
+        >
+            {/* The glowing border effect on hover */}
+            <motion.div 
+                className="absolute inset-0 border-2 border-sky-500/50 rounded-xl"
+                initial={{ opacity: 0, scale: 1.05 }}
+                variants={{ hover: { opacity: 1, scale: 1 } }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+            />
+            <div className="relative">
+                <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-bold text-white mb-2">Code Snippet Generator</h3>
+                    <motion.div 
+                        className="text-slate-500 group-hover:text-sky-400"
+                        variants={{ hover: { x: 5, y: -5 } }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                    >
+                        <ArrowUpRightIcon />
+                    </motion.div>
+                </div>
+                <p className="text-slate-400">
+                  A tool to create beautiful, shareable images and PDFs of your code snippets with syntax highlighting.
+                </p>
+            </div>
+        </motion.a>
       </div>
     </div>
   );
