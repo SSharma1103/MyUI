@@ -89,6 +89,36 @@ export default function MyToolsPage() {
                 </p>
             </div>
         </motion.a>
+        <motion.a 
+            href="https://form-generator-git-fix-build-error-67edcc-ssharma1103s-projects.vercel.app/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
+            whileHover="hover"
+        >
+            {/* The glowing border effect on hover */}
+            <motion.div 
+                className="absolute inset-0 border-2 border-sky-500/50 rounded-xl"
+                initial={{ opacity: 0, scale: 1.05 }}
+                variants={{ hover: { opacity: 1, scale: 1 } }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+            />
+            <div className="relative">
+                <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-bold text-white mb-2">Form Generator</h3>
+                    <motion.div 
+                        className="text-slate-500 group-hover:text-sky-400"
+                        variants={{ hover: { x: 5, y: -5 } }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                    >
+                        <ArrowUpRightIcon />
+                    </motion.div>
+                </div>
+                <p className="text-slate-400">
+                  This project is a full-stack web application that allows users to create, manage, and share forms, with an integrated AI feature to generate forms instantly from a text prompt. It also includes a "pro" tier, unlockable via a Solana cryptocurrency payment, which removes usage limitations.
+                </p>
+            </div>
+        </motion.a>
       </div>
     </div>
   );
