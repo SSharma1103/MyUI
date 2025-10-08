@@ -89,6 +89,8 @@ export default function MyToolsPage() {
                 </p>
             </div>
         </motion.a>
+
+        {/* Interactive Card for the Form Generator Tool */}
         <motion.a 
             href="https://form-generator-git-fix-build-error-67edcc-ssharma1103s-projects.vercel.app/" 
             target="_blank"
@@ -115,7 +117,7 @@ export default function MyToolsPage() {
                     </motion.div>
                 </div>
                 <p className="text-slate-400">
-                  This project is a full-stack web application that allows users to create, manage, and share forms, with an integrated AI feature to generate forms instantly from a text prompt. It also includes a "pro" tier, unlockable via a Solana cryptocurrency payment, which removes usage limitations.
+                  This project is a full-stack web application that allows users to create, manage, and share forms, with an integrated AI feature to generate forms instantly from a text prompt. It also includes a &quot;pro&quot; tier, unlockable via a Solana cryptocurrency payment, which removes usage limitations.
                 </p>
             </div>
         </motion.a>
