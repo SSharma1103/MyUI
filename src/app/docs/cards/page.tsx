@@ -6,6 +6,7 @@ import { cardCodeString } from "@/app/components/card001";
 import { InteractiveCard } from "@/app/components/card002";
 import { CardCodeString2 } from "@/app/components/card002";
 import { ProfileCard } from "@/app/components/card003";
+import { profilecardcode } from "@/app/components/card003";
 import { ProductSaleCard } from "@/app/components/card004";
 import { productCardCodeString } from "@/app/components/card004";
 import { SkillsSection } from "@/app/components/card005";
@@ -79,7 +80,7 @@ export default function CardComponentPage() {
             <ProfileCard />
           </div>
         }
-        codeString={CardCodeString2}
+        codeString={profilecardcode}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
