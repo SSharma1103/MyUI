@@ -92,7 +92,7 @@ export default function MyToolsPage() {
 
         {/* Interactive Card for the Form Generator Tool */}
         <motion.a 
-            href="https://form-generator-git-fix-build-error-67edcc-ssharma1103s-projects.vercel.app/" 
+            href="https://form-generator-weld.vercel.app/" 
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
