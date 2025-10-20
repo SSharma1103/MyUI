@@ -196,10 +196,10 @@ export default function MultiSelectComponentPage() {
     />
     <div className="flex justify-end mt-12">
         <Link
-          href="/docs/faq"
+          href="/docs/agenticUI"
           className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg hover:bg-slate-700 transition-colors"
         >
-          Next: faq
+          Next: AgenticUI
           <ArrowRightIcon />
         </Link>
       </div>

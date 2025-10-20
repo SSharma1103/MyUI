@@ -36,6 +36,7 @@ const Sidebar: FC = () => {
         { href: "/docs/effects", text: "Effects" },
         { href: "/docs/scrollanimation", text: "Scroll Animation" },
         { href: "/docs/input", text: "Input" },
+        { href: "/docs/agenticUI", text: "Agentic UI" },
       ],
     },
     {
