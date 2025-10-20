@@ -7,6 +7,8 @@ import CubeLoader from "@/app/components/loader002";
 import { loaderCodeString2 } from "@/app/components/loader002";
 import SquareLoader from "@/app/components/loader003";
 import { loaderCodeString3 } from "@/app/components/loader003";
+import { WireframeOrbPreview } from "@/app/components/loader004";
+import { wireframeOrbCodeString } from "@/app/components/loader004";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -39,6 +41,14 @@ export default function GridLoaderPage() {
         codeString={loaderCodeString3}
       />
       <div className="h-5"></div>
+      <ComponentShowcasePage
+      title="3D Wireframe Orb"
+      description="An interactive, rotating 3D wireframe sphere built with React Three Fiber. Users can drag to control the rotation."
+      tags={['3D', 'Animation', 'React Three Fiber', 'Interactive']}
+      preview={<WireframeOrbPreview />}
+      codeString={wireframeOrbCodeString}
+    />
+    <div className="h-5"></div>
      
       <div className="flex justify-end mt-12">
         <Link
