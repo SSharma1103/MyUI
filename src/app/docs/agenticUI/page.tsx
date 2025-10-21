@@ -4,6 +4,8 @@ import { CommandInputPreview } from "@/app/components/chat001"
 import { commandInputCodeString } from "@/app/components/chat001"
 import ComponentShowcasePage from "@/app/components/component-showcase"
 import { ArrowRightIcon } from "@/app/components/icons"
+import { CommandInputPreview2 } from "@/app/components/chat002"
+import { commandInputCodeString2 } from "@/app/components/chat002"
 import Link from "next/link"
 
 export default function AgenticUI(){
@@ -15,6 +17,14 @@ export default function AgenticUI(){
       tags={['Input', 'Form', 'Interactive', 'AI']}
       preview={<CommandInputPreview />}
       codeString={commandInputCodeString}
+    />
+    <div className="h-5"></div>
+     <ComponentShowcasePage
+      title="Command Input"
+      description="An intelligent text input supporting commands like @yt, @code, @gemini — complete with menu, auto-resizing textarea, and keyboard handling."
+      tags={["input", "commands", "ui", "text"]}
+      preview={<CommandInputPreview2/>}
+      codeString={commandInputCodeString2}
     />
     <div className="flex justify-end mt-12">
         <Link
