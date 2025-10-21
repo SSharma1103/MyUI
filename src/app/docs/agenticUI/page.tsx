@@ -7,12 +7,21 @@ import { ArrowRightIcon } from "@/app/components/icons"
 import { CommandInputPreview2 } from "@/app/components/chat002"
 import { commandInputCodeString2 } from "@/app/components/chat002"
 import Link from "next/link"
+import { AICommandInputPreview003, commandInputCodeString003 } from "@/app/components/chat003"
 
 export default function AgenticUI(){
     return(
         <div>
+          <ComponentShowcasePage
+      title="AI Command Input"
+      description="An advanced input component for AI chats, featuring an auto-growing textarea, a command menu, and selectable modes."
+      tags={['Input', 'Form', 'Interactive', 'AI']}
+      preview={<AICommandInputPreview003 />}
+      codeString={commandInputCodeString003}
+    />
+          <div className="h-5"></div>
         <ComponentShowcasePage
-      title="Command Input"
+      title="Command Input Small"
       description="An auto-resizing text input that detects and provides feedback for special commands, perfect for chat or AI interfaces.Try using commands @yt,@spotify"
       tags={['Input', 'Form', 'Interactive', 'AI']}
       preview={<CommandInputPreview />}
@@ -20,7 +29,7 @@ export default function AgenticUI(){
     />
     <div className="h-5"></div>
      <ComponentShowcasePage
-      title="Command Input"
+      title="Command Input Medium"
       description="An intelligent text input supporting commands like @yt, @code, @gemini — complete with menu, auto-resizing textarea, and keyboard handling."
       tags={["input", "commands", "ui", "text"]}
       preview={<CommandInputPreview2/>}
