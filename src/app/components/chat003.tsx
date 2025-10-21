@@ -69,6 +69,7 @@ const AICommandInput: FC = () => {
     <form onSubmit={handleSubmit} className="w-full">
       <div className="relative">
         <div className="flex flex-col rounded-xl border border-slate-700 bg-slate-800/50 p-2">
+        <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-2">
           <div className="flex w-full items-start">
             <textarea
               ref={textareaRef}
@@ -94,6 +95,7 @@ const AICommandInput: FC = () => {
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
             </button>
+            </div>
           </div>
           <div className="flex justify-start mt-2 gap-2">
             <button
