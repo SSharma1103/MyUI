@@ -49,3 +49,5 @@ jobs:
       # Step 5: Runs the Next.js build command to check for build errors and TypeScript errors
       - name: Build project
         run: npm run build
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
