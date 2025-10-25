@@ -1,0 +1,51 @@
+# Name of the workflow (displayed on GitHub)
+name: Next.js CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [ main ]
+  # Triggers the workflow on pull request events targeted at the main branch
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "test"
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Define the Node.js versions to test against
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x] # Test on Node.js 18 and 20
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Step 1: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+        uses: actions/checkout@v4 # Use the official checkout action
+
+      # Step 2: Sets up the specified version of Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm' # Enable caching for npm dependencies
+
+      # Step 3: Installs project dependencies
+      - name: Install dependencies
+        run: npm ci # Use 'npm ci' for faster, more reliable installs in CI
+
+      # Step 4: Runs ESLint to check for code style issues and errors
+      - name: Run ESLint
+        run: npm run lint
+
+      # Step 5: Runs the Next.js build command to check for build errors and TypeScript errors
+      - name: Build project
+        run: npm run build
