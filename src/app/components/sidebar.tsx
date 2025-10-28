@@ -1,8 +1,9 @@
+
 "use client";
 
 import React, { FC } from "react";
-
 import { usePathname } from "next/navigation";
+import Link from "next/link"; 
 
 interface SidebarLink {
   href: string;
@@ -14,10 +15,7 @@ interface LinkCategory {
   links: SidebarLink[];
 }
 
-const Sidebar: FC = () => {
-  const pathname = usePathname();
-
-  const linkCategories: LinkCategory[] = [
+export const linkCategories: LinkCategory[] = [
     {
       title: "Getting Started",
       links: [
@@ -31,7 +29,7 @@ const Sidebar: FC = () => {
       links: [
         { href: "/docs/buttons", text: "Buttons" },
         { href: "/docs/loaders", text: "Loaders" },
-        { href: "/docs/coursor-effect", text: "Coursor-effect" },
+        { href: "/docs/coursor-effect", text: "Coursor-effect" }, 
         { href: "/docs/cards", text: "Cards" },
         { href: "/docs/effects", text: "Effects" },
         { href: "/docs/scrollanimation", text: "Scroll Animation" },
@@ -47,7 +45,16 @@ const Sidebar: FC = () => {
         { href: "/docs/reviews", text: "Review" },
       ],
     },
-  ];
+];
+
+export const allLinks = linkCategories.flatMap(category => category.links);
+
+export const componentLinks = linkCategories
+      .find(category => category.title === "Components")?.links || [];
+
+
+const Sidebar: FC = () => {
+  const pathname = usePathname();
 
   return (
     <aside className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col z-40 pt-3">
@@ -61,7 +68,8 @@ const Sidebar: FC = () => {
                 </h3>
                 <div className="space-y-1">
                   {category.links.map((link) => (
-                    <a
+                   
+                    <Link
                       key={link.text}
                       href={link.href}
                       className={`group relative flex items-center rounded-md px-2 py-2 text-sm font-medium transition-colors ${
@@ -79,7 +87,7 @@ const Sidebar: FC = () => {
                       ></span>
 
                       <span className="ml-3">{link.text}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
