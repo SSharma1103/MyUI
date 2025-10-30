@@ -15,6 +15,8 @@ import { HeatmapGrid } from "@/app/components/heatmap";
 import { heatmapCodeString } from "@/app/components/heatmap";
 import { CodeSnippet } from "@/app/components/card006";
 import { codeSnippetCodeString } from "@/app/components/card006";
+import { ExperienceSectionPreview } from "@/app/components/card007";
+import { experienceCodeString } from "@/app/components/card007";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -39,6 +41,14 @@ export default function CardComponentPage() {
   const dummyData = generateDummyData();
   return (
     <div>
+      <ComponentShowcasePage
+      title="Hover-Reveal Experience Card"
+      description="A section to display professional experience. Cards reveal more details on hover with a smooth grid-based animation."
+      tags={['Section', 'Card', 'Hover Effect', 'Layout']}
+      preview={<ExperienceSectionPreview />}
+      codeString={experienceCodeString}
+    />
+      <div className="h-5"></div>
       <ComponentShowcasePage
         title="Card"
         description="Versatile card components for displaying content. Includes a standard static card and an interactive card with hover effects."
