@@ -41,9 +41,9 @@ export default function ButtonComponentPage() {
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
-        title="Delete Button"
-        description="A confirmation button with a swipe-to-reveal icon, ideal for destructive actions."
-        tags={["Destructive", "Interactive", "Animation"]}
+        title="Neobrutalism Buttons"
+        description="A set of high-contrast, neobrutalist-style buttons with thick borders, sharp shadows, and a 'press' animation on click."
+        tags={["Neobrutalism", "Interactive", "Animation", "Button"]}
         preview={<NeoButtonPreview />}
         codeString={neoButtonCodeString}
       />
