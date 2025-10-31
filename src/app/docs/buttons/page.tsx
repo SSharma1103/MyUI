@@ -10,6 +10,8 @@ import AnimatedButton from "@/app/components/button002";
 import AnimatedButton3 from "@/app/components/button003";
 import { buttonCodeString3 } from "@/app/components/button003";
 import { ArrowRightIcon } from "@/app/components/icons";
+import { NeoButtonPreview } from "@/app/components/button004";
+import { neoButtonCodeString } from "@/app/components/button004";
 
 export default function ButtonComponentPage() {
   return (
@@ -36,6 +38,14 @@ export default function ButtonComponentPage() {
         tags={["Destructive", "Interactive", "Animation"]}
         preview={<AnimatedButton3 />}
         codeString={buttonCodeString3}
+      />
+      <div className="h-5"></div>
+      <ComponentShowcasePage
+        title="Delete Button"
+        description="A confirmation button with a swipe-to-reveal icon, ideal for destructive actions."
+        tags={["Destructive", "Interactive", "Animation"]}
+        preview={<NeoButtonPreview />}
+        codeString={neoButtonCodeString}
       />
 
       <div className="flex justify-end mt-12">
