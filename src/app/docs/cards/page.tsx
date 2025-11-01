@@ -17,6 +17,8 @@ import { CodeSnippet } from "@/app/components/card006";
 import { codeSnippetCodeString } from "@/app/components/card006";
 import { ExperienceSectionPreview } from "@/app/components/card007";
 import { experienceCodeString } from "@/app/components/card007";
+import NeoCodeSnippet from "@/app/components/card008";
+import {neoCodeSnippetCodeString} from "@/app/components/card008";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -116,6 +118,13 @@ export default function CardComponentPage() {
       preview={<CodeSnippet />}
       codeString={codeSnippetCodeString}
     />
+    <div className="h-5"></div>
+    <ComponentShowcasePage
+      title="Neobrutalism Code Snippet"
+      description="A retro, neobrutalist-style component for displaying highlighted code blocks with a sharp, chunky border."
+      tags={['Display', 'Utility', 'Code', 'Neobrutalism']}
+      preview={<NeoCodeSnippet />}
+      codeString={neoCodeSnippetCodeString}/>
 
       <div className="flex justify-end mt-12">
         <Link
