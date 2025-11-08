@@ -112,10 +112,10 @@ const NeoButtonBase: FC<NeoButtonProps & { bgClasses: string }> = ({
         className
       }
       whileHover={{
-        boxShadow: '6px 6px 0px #000000', // <-- Corrected: 'shadow' to 'boxShadow'
+        boxShadow: '6px 6px 0px #000000', // 
       }}
       whileTap={{
-        boxShadow: 'none', // <-- Corrected: 'shadow' to 'boxShadow'
+        boxShadow: 'none', // 
         x: 4,
         y: 4,
       }}
