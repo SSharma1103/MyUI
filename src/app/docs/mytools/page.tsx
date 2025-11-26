@@ -26,26 +26,26 @@ export default function MyToolsPage() {
       {/* Grid for Tool Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* Interactive Card for the Heatmap Tool */}
+        {/* NEW CARD: Dev Profile Saver Extension */}
         <motion.a 
-            href="https://heatmap-zeta.vercel.app/" 
+            href="https://github.com/ssharma1103/dev-portfolio-copy" 
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
             whileHover="hover"
         >
-            {/* The glowing border effect on hover */}
+            {/* Purple glowing border effect on hover */}
             <motion.div 
-                className="absolute inset-0 border-2 border-sky-500/50 rounded-xl"
+                className="absolute inset-0 border-2 border-purple-500/50 rounded-xl"
                 initial={{ opacity: 0, scale: 1.05 }}
                 variants={{ hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
             />
             <div className="relative">
                 <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-bold text-white mb-2">Combined Dev Heatmap</h3>
+                    <h3 className="text-xl font-bold text-white mb-2">Dev Profile Saver</h3>
                     <motion.div 
-                        className="text-slate-500 group-hover:text-sky-400"
+                        className="text-slate-500 group-hover:text-purple-400"
                         variants={{ hover: { x: 5, y: -5 } }}
                         transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
@@ -53,12 +53,12 @@ export default function MyToolsPage() {
                     </motion.div>
                 </div>
                 <p className="text-slate-400">
-                  Visualize your contributions from multiple platforms like GitHub and LeetCode in a single, unified heatmap.
+                  A Chrome extension to save and sync your LeetCode, GitHub, and LinkedIn profiles. Built with React, Vite & Tailwind.
                 </p>
             </div>
         </motion.a>
 
-        {/* Interactive Card for the Code Snippet Tool */}
+        {/* EXISTING CARD: Code Snippet Tool */}
         <motion.a 
             href="https://code-snippet-gamma.vercel.app/" 
             target="_blank"
@@ -66,7 +66,7 @@ export default function MyToolsPage() {
             className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
             whileHover="hover"
         >
-            {/* The glowing border effect on hover */}
+            {/* Sky blue glowing border effect on hover */}
             <motion.div 
                 className="absolute inset-0 border-2 border-sky-500/50 rounded-xl"
                 initial={{ opacity: 0, scale: 1.05 }}
@@ -90,37 +90,6 @@ export default function MyToolsPage() {
             </div>
         </motion.a>
 
-        {/* Interactive Card for the Form Generator Tool */}
-        <motion.a 
-            href="https://form-generator-weld.vercel.app/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative block w-full p-6 overflow-hidden bg-slate-900/50 border border-slate-800 rounded-xl shadow-lg"
-            whileHover="hover"
-        >
-            {/* The glowing border effect on hover */}
-            <motion.div 
-                className="absolute inset-0 border-2 border-sky-500/50 rounded-xl"
-                initial={{ opacity: 0, scale: 1.05 }}
-                variants={{ hover: { opacity: 1, scale: 1 } }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-            />
-            <div className="relative">
-                <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-bold text-white mb-2">Form Generator</h3>
-                    <motion.div 
-                        className="text-slate-500 group-hover:text-sky-400"
-                        variants={{ hover: { x: 5, y: -5 } }}
-                        transition={{ duration: 0.3, ease: 'easeOut' }}
-                    >
-                        <ArrowUpRightIcon />
-                    </motion.div>
-                </div>
-                <p className="text-slate-400">
-                  This project is a full-stack web application that allows users to create, manage, and share forms, with an integrated AI feature to generate forms instantly from a text prompt. It also includes a &quot;pro&quot; tier, unlockable via a Solana cryptocurrency payment, which removes usage limitations.
-                </p>
-            </div>
-        </motion.a>
       </div>
     </div>
   );

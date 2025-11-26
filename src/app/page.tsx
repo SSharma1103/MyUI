@@ -117,7 +117,7 @@ const HeroSection = () => (
       transition={{ duration: 0.5 }}
     >
       <span className="rounded-full bg-slate-800 px-3 py-1 text-sm font-semibold text-sky-400">
-        Version 1.0 is here!
+        Version 1.1 is here!
       </span>
     </motion.div>
     <motion.h1
