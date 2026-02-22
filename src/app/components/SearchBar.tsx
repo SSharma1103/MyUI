@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { allLinks } from './sidebar';
+import type { SearchResult } from '@/types';
 
 const SearchIcon = () => (
   <svg
@@ -20,11 +21,6 @@ const SearchIcon = () => (
     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
   </svg>
 );
-
-interface SearchResult {
-  href: string;
-  text: string;
-}
 
 const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

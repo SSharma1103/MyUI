@@ -2,8 +2,7 @@
 
 import React, { useState, useRef, useEffect, FormEvent, FC } from "react";
 import { Youtube, Sparkles, Code, Mic } from "lucide-react";
-
-// --- 1. Define the component to be previewed ---
+import { cn } from './utils';
 
 const commandList = [
   { command: "@yt", icon: <Youtube size={18} />, label: "YouTube" },
@@ -12,7 +11,15 @@ const commandList = [
   { command: "@gemini", icon: <Sparkles size={18} />, label: "Ask Gemini" },
 ];
 
-const CommandInput: FC = () => {
+interface CommandInput002Props extends React.HTMLAttributes<HTMLFormElement> {
+  placeholder?: string;
+}
+
+const CommandInput: FC<CommandInput002Props> = ({
+  placeholder = "Type your message or a command...",
+  className,
+  ...props
+}) => {
   const [value, setValue] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -54,7 +61,7 @@ const CommandInput: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full">
+    <form onSubmit={handleSubmit} className={cn("w-full", className)} {...props}>
       <div className="relative">
         <div
           className="flex flex-col rounded-xl border border-slate-700 bg-slate-800/50 p-2
@@ -63,7 +70,7 @@ const CommandInput: FC = () => {
           <div className="flex w-full items-start">
             <textarea
               ref={textareaRef}
-              placeholder="Type your message or a command..."
+              placeholder={placeholder}
               value={value}
               onChange={(e) => setValue(e.target.value)}
               onKeyDown={(e) => {
@@ -150,70 +157,4 @@ export const CommandInputPreview2 = () => (
     </div>
 );
 
-// --- 2. Define the code string for the component ---
-export const commandInputCodeString2 = `
-'use client';
-
-// First, install lucide-react: npm install lucide-react
-
-import React, { useState, useRef, useEffect, FormEvent, FC } from "react";
-import { Youtube, Sparkles, Code, Mic } from "lucide-react";
-
-const commandList = [
-  { command: "@yt", icon: <Youtube size={18} />, label: "YouTube" },
-  { command: "@spotify", icon: <Mic size={18} />, label: "Spotify" },
-  { command: "@code", icon: <Code size={18} />, label: "Code Block" },
-  { command: "@gemini", icon: <Sparkles size={18} />, label: "Ask Gemini" },
-];
-
-const CommandInput: FC = () => {
-  const [value, setValue] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = \`\${textareaRef.current.scrollHeight}px\`;
-    }
-  }, [value]);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const detectedCommand = commandList.find((item) =>
-    value.includes(item.command)
-  );
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (!value.trim()) return;
-    // Your submission logic here
-    setValue("");
-  };
-
-  const handleCommandSelect = (command: string) => {
-    setValue((prev) => \`\${command} \${prev.replace(/@\\w*/, '').trim()}\`);
-    setIsMenuOpen(false);
-    textareaRef.current?.focus();
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="w-full">
-      <div className="relative">
-        {/* ... (rest of the JSX) */}
-      </div>
-    </form>
-  );
-};
-
 export default CommandInput;
-`;

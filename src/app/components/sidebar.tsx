@@ -3,17 +3,8 @@
 
 import React, { FC } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link"; 
-
-interface SidebarLink {
-  href: string;
-  text: string;
-}
-
-interface LinkCategory {
-  title: string;
-  links: SidebarLink[];
-}
+import Link from "next/link";
+import type { SidebarLink, LinkCategory } from "@/types";
 
 export const linkCategories: LinkCategory[] = [
     {

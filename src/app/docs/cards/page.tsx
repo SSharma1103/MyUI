@@ -2,23 +2,14 @@
 
 import ComponentShowcasePage from "@/app/components/component-showcase";
 import { StandardCard } from "@/app/components/card001";
-import { cardCodeString } from "@/app/components/card001";
 import { InteractiveCard } from "@/app/components/card002";
-import { CardCodeString2 } from "@/app/components/card002";
 import { ProfileCard } from "@/app/components/card003";
-import { profilecardcode } from "@/app/components/card003";
 import { ProductSaleCard } from "@/app/components/card004";
-import { productCardCodeString } from "@/app/components/card004";
 import { SkillsSection } from "@/app/components/card005";
-import { skillsCodeString } from "@/app/components/card005";
 import { HeatmapGrid } from "@/app/components/heatmap";
-import { heatmapCodeString } from "@/app/components/heatmap";
 import { CodeSnippet } from "@/app/components/card006";
-import { codeSnippetCodeString } from "@/app/components/card006";
 import { ExperienceSectionPreview } from "@/app/components/card007";
-import { experienceCodeString } from "@/app/components/card007";
 import NeoCodeSnippet from "@/app/components/card008";
-import {neoCodeSnippetCodeString} from "@/app/components/card008";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -33,7 +24,6 @@ const generateDummyData = (): HeatmapData => {
         const date = new Date(today);
         date.setDate(today.getDate() - i);
         const dateString = date.toISOString().split('T')[0];
-        // Generate a random contribution level (0-8)
         data[dateString] = Math.floor(Math.random() * 9);
     }
     return data;
@@ -48,7 +38,6 @@ export default function CardComponentPage() {
       description="A section to display professional experience. Cards reveal more details on hover with a smooth grid-based animation."
       tags={['Section', 'Card', 'Hover Effect', 'Layout']}
       preview={<ExperienceSectionPreview />}
-      codeString={experienceCodeString}
     />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -60,7 +49,6 @@ export default function CardComponentPage() {
             <StandardCard />
           </div>
         }
-        codeString={cardCodeString}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -72,7 +60,6 @@ export default function CardComponentPage() {
             <InteractiveCard></InteractiveCard>
           </div>
         }
-        codeString={CardCodeString2}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -80,7 +67,6 @@ export default function CardComponentPage() {
       description="A component to visualize data over the past year, similar to a GitHub contribution graph."
       tags={['Data Viz', 'Chart', 'Calendar']}
       preview={<HeatmapGrid data={dummyData} />}
-      codeString={heatmapCodeString}
     />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -92,7 +78,6 @@ export default function CardComponentPage() {
             <ProfileCard />
           </div>
         }
-        codeString={profilecardcode}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -100,7 +85,6 @@ export default function CardComponentPage() {
         description="An animated card for showcasing products on sale, with a hover effect and interactive 'Add to Cart' button."
         tags={["eCommerce", "Card", "Animation"]}
         preview={<ProductSaleCard />}
-        codeString={productCardCodeString}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -108,7 +92,6 @@ export default function CardComponentPage() {
       description="A section to display skills or technologies, categorized into interactive spotlight cards."
       tags={['Section', 'Layout', 'Interactive']}
       preview={<SkillsSection />}
-      codeString={skillsCodeString}
     />
     <div className="h-5"></div>
     <ComponentShowcasePage
@@ -116,7 +99,6 @@ export default function CardComponentPage() {
       description="A read-only component for displaying formatted and highlighted code blocks, styled like a macOS window."
       tags={['Display', 'Utility', 'Code']}
       preview={<CodeSnippet />}
-      codeString={codeSnippetCodeString}
     />
     <div className="h-5"></div>
     <ComponentShowcasePage
@@ -124,7 +106,7 @@ export default function CardComponentPage() {
       description="A retro, neobrutalist-style component for displaying highlighted code blocks with a sharp, chunky border."
       tags={['Display', 'Utility', 'Code', 'Neobrutalism']}
       preview={<NeoCodeSnippet />}
-      codeString={neoCodeSnippetCodeString}/>
+    />
 
       <div className="flex justify-end mt-12">
         <Link

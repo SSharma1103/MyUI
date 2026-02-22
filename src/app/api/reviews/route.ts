@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import clientPromise from "@/app/lib/mongodb"
+import clientPromise from "@/app/lib/mongodb";
+import type { ReviewRequestBody, ApiErrorResponse, ApiSuccessResponse } from "@/types";
 
 const DB_NAME = 'Review';
 const COLLECTION_NAME = 'Review';
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     try {
         const client = await clientPromise;
         const db = client.db(DB_NAME);
-        const data = await request.json();
+        const data: ReviewRequestBody = await request.json();
 
         const existingReview = await db.collection(COLLECTION_NAME).findOne({ email: data.email });
         if (existingReview) {

@@ -5,12 +5,8 @@ import React, { useState, FC } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import SearchBar from "./SearchBar"; 
-
-interface NavLink {
-  href: string;
-  text: string;
-}
+import SearchBar from "./SearchBar";
+import type { NavLink } from "@/types";
 
 const Navbar: FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);

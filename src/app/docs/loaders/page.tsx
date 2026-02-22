@@ -2,13 +2,9 @@
 
 import ComponentShowcasePage from "@/app/components/component-showcase";
 import GridLoader from "@/app/components/loader001";
-import { loaderCodeString } from "@/app/components/loader001";
 import CubeLoader from "@/app/components/loader002";
-import { loaderCodeString2 } from "@/app/components/loader002";
 import SquareLoader from "@/app/components/loader003";
-import { loaderCodeString3 } from "@/app/components/loader003";
 import { WireframeOrbPreview } from "@/app/components/loader004";
-import { wireframeOrbCodeString } from "@/app/components/loader004";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 
@@ -21,7 +17,6 @@ export default function GridLoaderPage() {
         description="A loading indicator featuring a 3D cube with a line that continuously traces its circumference."
         tags={["Loader", "Animation", "3D", "SVG"]}
         preview={<CubeLoader />}
-        codeString={loaderCodeString2}
       />
       <div className="h-5"></div>
 
@@ -30,7 +25,6 @@ export default function GridLoaderPage() {
         description="A loading indicator that displays a grid of dots pulsing with a randomized, organic rhythm."
         tags={["Loader", "Animation", "Utility"]}
         preview={<GridLoader />}
-        codeString={loaderCodeString}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -38,7 +32,6 @@ export default function GridLoaderPage() {
         description="A loading indicator featuring a 2D square with a line that continuously traces its perimeter."
         tags={["Loader", "Animation", "2D"]}
         preview={<SquareLoader />}
-        codeString={loaderCodeString3}
       />
       <div className="h-5"></div>
       <ComponentShowcasePage
@@ -46,7 +39,6 @@ export default function GridLoaderPage() {
       description="An interactive, rotating 3D wireframe sphere built with React Three Fiber. Users can drag to control the rotation."
       tags={['3D', 'Animation', 'React Three Fiber', 'Interactive']}
       preview={<WireframeOrbPreview />}
-      codeString={wireframeOrbCodeString}
     />
     <div className="h-5"></div>
      

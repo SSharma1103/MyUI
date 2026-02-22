@@ -1,6 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
+import type { FooterLink } from "@/types";
 
 const HeartIcon = () => (
   <svg
@@ -17,7 +18,7 @@ const HeartIcon = () => (
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
+  const footerLinks: FooterLink[] = [
     { href: "/docs/introduction", text: "Docs" },
     { href: "https://github.com/SSharma1103/MyUI", text: "GitHub" },
     { href: "/docs/faq", text: "FAQ" },

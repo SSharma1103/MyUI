@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect, FormEvent, FC } from "react";
 import { Youtube, Sparkles, Code, Mic, File, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from './utils';
 
-// --- The Reusable Component ---
 interface CommandOption {
   command: string;
   icon: React.ReactNode;
@@ -21,6 +21,7 @@ interface AICommandInputProps {
     initialModes?: ModeOption[];
     onSubmit: (value: string, command?: string, mode?: string | null, files?: { id: number }[]) => void;
     placeholder?: string;
+    className?: string;
 }
 
 const AICommandInput: FC<AICommandInputProps> = ({
@@ -38,6 +39,7 @@ const AICommandInput: FC<AICommandInputProps> = ({
     ],
     onSubmit,
     placeholder = "Type your message or a command...",
+    className,
 }) => {
   const [value, setValue] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -122,7 +124,7 @@ const AICommandInput: FC<AICommandInputProps> = ({
   );
 
   return (
-    <form onSubmit={handleSubmitInternal} className="w-full">
+    <form onSubmit={handleSubmitInternal} className={cn("w-full", className)}>
       <div className="relative">
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-2">
           {files.length > 0 && renderFiles()}
@@ -267,7 +269,6 @@ const AICommandInput: FC<AICommandInputProps> = ({
   );
 };
 
-// --- Preview Component ---
 export const AICommandInputPreview = () => {
     const handleSubmit = (value: string, command?: string, mode?: string | null, files?: {id: number}[]) => {
         alert(`Submitted: ${value}\nCommand: ${command || 'None'}\nMode: ${mode || 'None'}\nFiles: ${files?.length || 0}`);
@@ -279,78 +280,4 @@ export const AICommandInputPreview = () => {
     );
 }
 
-// --- Code String ---
-export const aiCommandInputCodeString = `
-'use client';
-
-import React, { useState, useRef, useEffect, FormEvent, FC } from "react";
-import { Youtube, Sparkles, Code, Mic, File, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-
-// Interface definitions... (CommandOption, ModeOption, AICommandInputProps)
-
-const AICommandInput: FC<AICommandInputProps> = ({ /* Props... */ }) => {
-  // State and Refs...
-  const [value, setValue] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeMode, setActiveMode] = useState<string | null>(null);
-  const [files, setFiles] = useState<{ id: number }[]>([]);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // Effects... (useEffect hooks)
-
-  // Handlers... (handleSubmitInternal, handleCommandSelect, handleModeToggle, removeFile)
-
-  // Render function for files
-  const renderFiles = () => (
-    // JSX for file list
-    <div className="flex flex-wrap gap-2 mb-2 px-1">
-      {/* ... mapping over files ... */}
-    </div>
-  );
-
-  return (
-    <form onSubmit={handleSubmitInternal} className="w-full">
-      <div className="relative">
-        <div className="rounded-xl border border-slate-700 bg-slate-900 p-2">
-          {files.length > 0 && renderFiles()}
-          <div className="flex flex-col rounded-md border border-slate-700 bg-slate-800/50 p-2 focus-within:ring-2 focus-within:ring-sky-500 transition-all duration-300">
-             {/* Textarea and Send Button */}
-            <div className="flex w-full items-start">
-               {/* ... textarea ... */}
-               {/* ... send button ... */}
-            </div>
-             {/* Action Buttons (Add Command, Modes) */}
-            <div className="flex justify-start items-center mt-2 gap-2 pl-1">
-               {/* ... add command button ... */}
-               {/* ... mode buttons ... */}
-            </div>
-          </div>
-
-          {/* Command Menu */}
-          <AnimatePresence>
-            {isMenuOpen && (
-              <motion.div /* ... menu attributes ... */ >
-                 {/* ... menu content ... */}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Detected Command Hint */}
-        {detectedCommand && !isMenuOpen && (
-          <motion.div /* ... hint attributes ... */ >
-             {/* ... hint content ... */}
-          </motion.div>
-        )}
-      </div>
-    </form>
-  );
-};
-
 export default AICommandInput;
-`;
-
-
-

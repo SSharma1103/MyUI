@@ -3,12 +3,9 @@
 import React, { FC, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import CrosshairPreview from "@/app/components/cursor002";
+import type { AnimatedButtonProps, SpotlightCardProps } from "@/types";
 
-const AnimatedButton: FC<{
-  href: string;
-  text: string;
-  variant?: "primary" | "secondary";
-}> = ({ href, text, variant = "primary" }) => {
+const AnimatedButton: FC<AnimatedButtonProps> = ({ href, text, variant = "primary" }) => {
   const textVariants = { initial: { x: 0 }, hover: { x: "-125%" } };
   const arrowVariants = { initial: { x: "125%" }, hover: { x: 0 } };
   const ArrowRightIcon = () => (
@@ -67,7 +64,7 @@ const AnimatedButton: FC<{
   );
 };
 
-const SpotlightCard: FC<{ title: string; description: string }> = ({
+const SpotlightCard: FC<SpotlightCardProps> = ({
   title,
   description,
 }) => {

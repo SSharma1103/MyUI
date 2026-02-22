@@ -2,16 +2,9 @@
 
 import React, { useState, useEffect, FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import type { Review, StarIconProps, StarRatingProps } from '@/types';
 
-interface Review {
-    _id?: string;
-    rating: number;
-    email: string;
-    comment?: string;
-    createdAt?: Date;
-}
-
-const StarIcon: FC<{ isFilled: boolean }> = ({ isFilled }) => (
+const StarIcon: FC<StarIconProps> = ({ isFilled }) => (
     <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -26,7 +19,7 @@ const StarIcon: FC<{ isFilled: boolean }> = ({ isFilled }) => (
     </motion.svg>
 );
 
-const StarRating: FC<{ rating: number; setRating: (rating: number) => void }> = ({ rating, setRating }) => {
+const StarRating: FC<StarRatingProps> = ({ rating, setRating }) => {
     const [hoverRating, setHoverRating] = useState(0);
 
     return (

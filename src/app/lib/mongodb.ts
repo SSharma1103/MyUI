@@ -1,6 +1,11 @@
 import { MongoClient, MongoClientOptions } from "mongodb";
 
-const uri = process.env.MONGODB_URI;
+/** Augments the global scope during development to persist the Mongo client. */
+interface GlobalWithMongo {
+  _mongoClientPromise?: Promise<MongoClient>;
+}
+
+const uri: string | undefined = process.env.MONGODB_URI;
 const options: MongoClientOptions = {};
 
 let client: MongoClient;
@@ -11,9 +16,7 @@ if (!process.env.MONGODB_URI) {
 }
 
 if (process.env.NODE_ENV === "development") {
-  const globalWithMongo = global as typeof globalThis & {
-    _mongoClientPromise: Promise<MongoClient>
-  }
+  const globalWithMongo = global as unknown as GlobalWithMongo;
 
   if (!globalWithMongo._mongoClientPromise) {
     client = new MongoClient(uri!, options);
@@ -26,3 +29,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export default clientPromise;
+

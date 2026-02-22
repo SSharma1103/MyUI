@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, FC, ReactNode } from "react";
+import React, { useState, FC } from "react";
+import { cn } from './utils';
+import type { ComponentShowcaseProps, CodeBlockProps } from "@/types";
 
 const CopyIcon = () => (
   <svg
@@ -33,7 +35,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-const CodeBlock = ({ codeString }: { codeString: string }) => {
+const CodeBlock: FC<CodeBlockProps> = ({ codeString }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = () => {
@@ -59,21 +61,14 @@ const CodeBlock = ({ codeString }: { codeString: string }) => {
   );
 };
 
-interface ComponentShowcaseProps {
-  title: string;
-  description: string;
-  tags?: string[];
-  preview: ReactNode;
-  codeString: string;
-}
-
 const ComponentShowcasePage: FC<ComponentShowcaseProps> = ({
   title,
   description,
-  tags = ["buton"],
+  tags = ["button"],
   preview,
   codeString,
 }) => {
+  const hasCode = !!codeString;
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
   return (
@@ -93,38 +88,48 @@ const ComponentShowcasePage: FC<ComponentShowcaseProps> = ({
         </div>
       </div>
 
-      <div className="flex border-b border-slate-800">
-        <button
-          onClick={() => setActiveTab("preview")}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
-            activeTab === "preview"
-              ? "border-b-2 border-sky-400 text-white"
-              : "text-slate-400 hover:text-white"
-          }`}
-        >
-          Preview
-        </button>
-        <button
-          onClick={() => setActiveTab("code")}
-          className={`px-4 py-2 text-sm font-medium transition-colors ${
-            activeTab === "code"
-              ? "border-b-2 border-sky-400 text-white"
-              : "text-slate-400 hover:text-white"
-          }`}
-        >
-          Code
-        </button>
-      </div>
+      {hasCode ? (
+        <>
+          <div className="flex border-b border-slate-800">
+            <button
+              onClick={() => setActiveTab("preview")}
+              className={`px-4 py-2 text-sm font-medium transition-colors ${
+                activeTab === "preview"
+                  ? "border-b-2 border-sky-400 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Preview
+            </button>
+            <button
+              onClick={() => setActiveTab("code")}
+              className={`px-4 py-2 text-sm font-medium transition-colors ${
+                activeTab === "code"
+                  ? "border-b-2 border-sky-400 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Code
+            </button>
+          </div>
 
-      <div className="mt-6">
-        {activeTab === "preview" ? (
+          <div className="mt-6">
+            {activeTab === "preview" ? (
+              <div className="flex justify-center items-center bg-black min-h-[300px] w-full p-8 rounded-lg border border-slate-800">
+                {preview}
+              </div>
+            ) : (
+              <CodeBlock codeString={codeString} />
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="mt-6">
           <div className="flex justify-center items-center bg-black min-h-[300px] w-full p-8 rounded-lg border border-slate-800">
             {preview}
           </div>
-        ) : (
-          <CodeBlock codeString={codeString} />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,19 +1,11 @@
 'use client';
 
-// Import the named export from your showcase template
- // Adjust the import path as needed
 import React, { useState, FC, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from './utils';
+import type { GlassmorphismCardProps } from '@/types';
 
-// --- 1. Define the component to be previewed ---
-
-// Define the props for the GlassmorphismCard
-interface GlassmorphismCardProps {
-  isLoggedIn: boolean;
-  onButtonClick: () => void;
-}
-
- const GlassmorphismCard: FC<GlassmorphismCardProps> = ({ isLoggedIn, onButtonClick }) => {
+const GlassmorphismCard: FC<GlassmorphismCardProps> = ({ isLoggedIn, onButtonClick }) => {
   const constraintsRef = useRef(null);
 
   return (
@@ -95,9 +87,12 @@ interface GlassmorphismCardProps {
   );
 };
 
+interface GlassmorphismCardPreviewProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-// --- Preview Component to manage state ---
-export const GlassmorphismCardPreview = () => {
+export const GlassmorphismCardPreview = ({
+  className,
+  ...props
+}: GlassmorphismCardPreviewProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   const handleToggle = () => {
@@ -105,7 +100,7 @@ export const GlassmorphismCardPreview = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 w-full">
+    <div className={cn("flex flex-col items-center justify-center gap-8 w-full", className)} {...props}>
       <GlassmorphismCard isLoggedIn={isLoggedIn} onButtonClick={handleToggle} />
       <button 
         onClick={handleToggle}
@@ -117,26 +112,5 @@ export const GlassmorphismCardPreview = () => {
   )
 }
 
-// --- 2. Define the code string for the component ---
-export const glassmorphismCodeString = `
-'use client';
-
-import React, { FC, useRef } from 'react';
-import { motion } from 'framer-motion';
-
-// Define the props for the GlassmorphismCard
-interface GlassmorphismCardProps {
-  isLoggedIn: boolean;
-  onButtonClick: () => void;
-}
-
-const GlassmorphismCard: FC<GlassmorphismCardProps> = ({ isLoggedIn, onButtonClick }) => {
-  const constraintsRef = useRef(null);
-
-  return (
-    // ... (rest of the component code)
-  );
-};
-
-export default GlassmorphismCard;
-`;
+export { GlassmorphismCard };
+export default GlassmorphismCardPreview;

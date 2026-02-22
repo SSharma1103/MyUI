@@ -1,5 +1,4 @@
 import ComponentShowcasePage from "@/app/components/component-showcase";
-import { timelineCodeString } from "@/app/components/timeline_showcase";
 import { ScrollTimeline } from "@/app/components/timeline_showcase";
 import { ArrowRightIcon } from "@/app/components/icons";
 import Link from "next/link";
@@ -15,7 +14,6 @@ export default function TimelinePage() {
       preview={
         <ScrollTimeline/>
       }
-      codeString={timelineCodeString}
     />
     <div className="flex justify-end mt-12">
         <Link 

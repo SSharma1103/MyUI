@@ -3,13 +3,10 @@
 import ComponentShowcasePage from "@/app/components/component-showcase";
 import React from "react";
 import CustomCursor from "@/app/components/cursor001";
-import { cursorCodeString } from "@/app/components/cursor001";
 import CrosshairPreview from "@/app/components/cursor002";
-import { crosshairCodeString } from "@/app/components/cursor002";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/app/components/icons";
 import { InteractiveBarDisplay } from "@/app/components/cursor003";
-import { barDisplayCodeString } from "@/app/components/cursor003";
 
 export default function CustomCursorPage() {
   return (
@@ -19,7 +16,6 @@ export default function CustomCursorPage() {
       description="A futuristic data visualization component where bars animate and react to the vertical position of the cursor."
       tags={['Effect', 'Animation', 'Data Viz', 'Interactive']}
       preview={<InteractiveBarDisplay />}
-      codeString={barDisplayCodeString}
     />
       
       <div className="h-5"></div>
@@ -28,7 +24,6 @@ export default function CustomCursorPage() {
         description="A custom crosshair cursor with a smooth, wobbly follow effect and a turbulence distortion on link hover."
         tags={["Effect", "Animation", "Framer Motion", "Cursor"]}
         preview={<CrosshairPreview />}
-        codeString={crosshairCodeString}
       />
       
       <div className="h-5"></div>
@@ -37,7 +32,6 @@ export default function CustomCursorPage() {
         description="A custom animated trail cursor effect that works anywhere inside the preview area."
         tags={["Effect", "Animation", "Scoped", "UX"]}
         preview={<CustomCursor />}
-        codeString={cursorCodeString}
       />
       
       <div className="flex justify-end mt-12">

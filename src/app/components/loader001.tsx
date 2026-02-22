@@ -1,14 +1,23 @@
 "use client";
 
 import React, { FC } from "react";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
+import { cn } from './utils';
 
-const GridLoader: FC = () => {
-  const animationDuration = 1.5;
+interface GridLoaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  gridSize?: number;
+  animationDuration?: number;
+}
 
+const GridLoader: FC<GridLoaderProps> = ({
+  gridSize = 9,
+  animationDuration = 1.5,
+  className,
+  ...props
+}) => {
   return (
-    <div className="grid grid-cols-3 gap-3">
-      {Array.from({ length: 9 }).map((_, index) => (
+    <div className={cn("grid grid-cols-3 gap-3", className)} {...props}>
+      {Array.from({ length: gridSize }).map((_, index) => (
         <motion.div
           key={index}
           className="w-5 h-5 bg-slate-300 rounded-lg"
@@ -19,7 +28,6 @@ const GridLoader: FC = () => {
             duration: animationDuration,
             ease: "easeInOut",
             repeat: Infinity,
-
             delay: Math.random() * (animationDuration / 2),
           }}
         />
@@ -27,39 +35,5 @@ const GridLoader: FC = () => {
     </div>
   );
 };
-export default GridLoader;
-
-export const loaderCodeString = `
-'use client';
-
-import React, { FC } from 'react';
-import { motion } from 'framer-motion';
-
-const GridLoader: FC = () => {
-    const animationDuration = 1.5; // Total duration for one pulse cycle
-
-    return (
-        <div className="grid grid-cols-3 gap-3">
-            {/* Create an array of 9 elements to map over for the grid */}
-            {Array.from({ length: 9 }).map((_, index) => (
-                <motion.div
-                    key={index}
-                    className="w-5 h-5 bg-slate-300 rounded-lg"
-                    animate={{
-                        scale: [1, 1.5, 1], // Keyframes: normal -> grow -> normal
-                    }}
-                    transition={{
-                        duration: animationDuration,
-                        ease: "easeInOut",
-                        repeat: Infinity,
-                        // Random delay for each dot to create the async pulsing effect
-                        delay: Math.random() * (animationDuration / 2),
-                    }}
-                />
-            ))}
-        </div>
-    );
-};
 
 export default GridLoader;
-`;
